@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Kavivanar&subset=latin-ext');
+
+$background: #F4F4F4;
+$white: #fff;
+$btn-color: #2B2B2B;
+
+.btn__style {
+    padding: 15px;
+    border-radius: 100px;
+    font-size: 15px;
+    color: $white;
+    background-color: $btn-color;
+    border: 2px solid $white;
+}
+
+body {
+    text-align: center;
+    color: $white;
+    background-color: $background;
+    font-family: 'Kavivanar', cursive;
+    letter-spacing: .4em;
+    background-image: url(https://images.unsplash.com/photo-1456425731181-2152d80d946c?ixlib=rb-0.3.5&s=921c0863fc743f8318634382308273b2&auto=format&fit=crop&w=751&q=80);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.title {
+    text-transform: capitalize;
+}
+
+.btn {
+   @extend .btn__style;
+}
+
+.search {
+  @extend .btn__style;
+}
+
+.list {
+    list-style-type: none;
+    font-size: 25px;
+}

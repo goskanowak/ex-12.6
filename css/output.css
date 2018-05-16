@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Kavivanar&subset=latin-ext");
+.btn__style, .btn, .search {
+  padding: 15px;
+  border-radius: 100px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #2B2B2B;
+  border: 2px solid #fff; }
+
+body {
+  text-align: center;
+  color: #fff;
+  background-color: #F4F4F4;
+  font-family: 'Kavivanar', cursive;
+  letter-spacing: .4em;
+  background-image: url(https://images.unsplash.com/photo-1456425731181-2152d80d946c?ixlib=rb-0.3.5&s=921c0863fc743f8318634382308273b2&auto=format&fit=crop&w=751&q=80);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.title {
+  text-transform: capitalize; }
+
+.list {
+  list-style-type: none;
+  font-size: 25px; }
+
+/*# sourceMappingURL=output.css.map */
