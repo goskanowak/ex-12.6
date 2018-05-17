@@ -1,7 +1,7 @@
-let url = 'https://restcountries.eu/rest/v1/name/';
-let countriesList = $('#countries');
+const url = 'https://restcountries.eu/rest/v1/name/';
+const countriesList = $('#countries');
 
-$('#country-name').keypress(function(e) {
+$('#country-name').on('keypress', function(e) {
     if(e.which ==13) {
         searchCountries();
     }
@@ -10,8 +10,8 @@ $('#country-name').keypress(function(e) {
 $('#search').on('click', searchCountries);
 
 function searchCountries() {
-    let countryName = $('#country-name').val(); // zanim wywołamy wyszukiwanie, pobieramy watrość wpisaną przez użytkownika
-    if(!countryName.length) countryName = 'Poland'; // warunek czy pole nie jest puste jak puste- to warośćdomyślna Poland
+    let countryName = $('#country-name').val(); 
+    if(!countryName.length) countryName = 'Poland'; 
     $.ajax({
         url: url + countryName,
         method: 'GET',
@@ -20,9 +20,13 @@ function searchCountries() {
 }
 
 function showCountriesList(resp) {
-    countriesList.empty(); // wyczyszczenie listy krajów po poprzednim zapytaniu
-    resp.forEach(function(item) { //metoda forEach, iteruje po każdym elemencie tablicy resp
-        $('<li>').text(item.name).appendTo(countriesList);
-        $('<p>').text(item.capital).appendTo(countriesList);
-        });
+    countriesList.empty();
+    let respArray = Array.isArray(resp);
+    if (!respArray || !resp.length) return;
+    resp.forEach(function(item) { 
+        $('<li>').text('Country: ' + item.name).appendTo(countriesList);
+        $('<li>').text('Capital: ' + item.capital).appendTo(countriesList);
+        $('<li>').text('Population: ' + item.population).appendTo(countriesList);
+        $('<li>').text('Region: ' + item.region).appendTo(countriesList);
+    });   
 }
